@@ -9,60 +9,58 @@ const capabilities = [
   "CMS",
 ];
 
-const trustPoints = [
-  "Diseño a medida",
-  "100% responsive",
-  "SEO técnico",
-  "Integraciones",
-];
+const trustPoints = ["Estrategia", "Diseño", "Código", "Lanzamiento"];
 ---
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="reveal show">
-      <div class="eyebrow"><span class="pulse"></span>Diseño + desarrollo web</div>
+      <div class="hero-note"><span class="pulse"></span>Estudio web independiente · México / remoto</div>
       <h1 id="hero-title">
-        Tu idea merece una web que diga <span class="accent-line">sí.</span>
+        Webs que convierten el “tal vez” en <span class="accent-line">sí.</span>
       </h1>
       <p class="lead">
-        Diseñamos y desarrollamos sitios web modernos, rápidos y fáciles de usar para
-        negocios que quieren verse profesionales, generar confianza y convertir visitas
-        en oportunidades.
+        Diseñamos y desarrollamos sitios claros, rápidos y con carácter para negocios
+        que quieren explicar mejor lo que hacen y convertir visitas en oportunidades.
       </p>
       <div class="actions">
         <a class="btn lime magnetic" href="#contacto">
-          Quiero una web <span class="arrow" aria-hidden="true">↗</span>
+          Cuéntanos tu idea <span class="arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="btn soft" href="#proyectos">Ver proyectos</a>
+        <a class="text-link" href="#proyectos">Ver cómo lo hacemos <span aria-hidden="true">↓</span></a>
       </div>
       <div class="trust" aria-label="Características del servicio">
-        {trustPoints.map((point) => <span>{point}</span>)}
+        {trustPoints.map((point, index) => <span><b>{index + 1}</b>{point}</span>)}
       </div>
     </div>
 
-    <div class="hero-media reveal show" id="heroTilt">
-      <div class="media-main">
-        <div class="media-atmosphere" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="terminal-window">
-          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="type-line">
-            ¿Necesitas una web que sí funcione? <b>Si_</b><span class="cursor"></span>
+    <div class="hero-workbench reveal show" id="heroTilt" role="img" aria-label="Prototipo de una experiencia web creada por SomosInformáticos">
+      <div class="workbench-bar" aria-hidden="true">
+        <span class="workbench-dots"><i></i><i></i><i></i></span>
+        <span>Vista previa · escritorio</span>
+        <span class="workbench-status">En línea</span>
+      </div>
+      <div class="workbench-canvas" aria-hidden="true">
+        <aside class="demo-rail">
+          <b>Si_</b>
+          <div><i></i><i></i><i></i></div>
+          <span>01</span>
+        </aside>
+        <div class="demo-site">
+          <div class="demo-nav"><b>Norte</b><span>Servicios&nbsp;&nbsp; Estudio&nbsp;&nbsp; Contacto</span><i>Hablemos ↗</i></div>
+          <div class="demo-hero">
+            <p>Consultoría estratégica</p>
+            <h2>Decisiones claras.<br />Resultados visibles.</h2>
+            <div class="demo-copy"><span></span><span></span><span></span></div>
+            <i class="demo-button">Empecemos ↗</i>
+          </div>
+          <div class="demo-proof">
+            <span><b>01</b>Estrategia</span><span><b>02</b>Implementación</span><span><b>03</b>Resultados</span>
           </div>
         </div>
-        <div class="media-copy">
-          <small>SomosInformáticos / web studio</small>
-          <h2>Diseño que atrae.<br /><span>Código que responde.</span></h2>
-          <small>Tu sitio listo para verse bien en cualquier pantalla.</small>
-        </div>
       </div>
-      <div class="float-card fc1">
-        <small>Experiencia</small><b>Simple.</b><small>Clara · rápida · intuitiva</small>
-      </div>
-      <div class="float-card fc2">
-        <small>Respuesta</small><b>Si_</b><small>Lo hacemos realidad.</small>
-      </div>
+      <div class="stage-note stage-note-speed"><b>Rápida</b><span>Carga optimizada</span></div>
+      <div class="stage-note stage-note-mobile"><b>Flexible</b><span>Diseño responsive</span></div>
     </div>
   </div>
 </section>

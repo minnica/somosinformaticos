@@ -1,23 +1,6 @@
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const ambientSpot = document.querySelector("#ambientSpot");
 const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
-
-if (ambientSpot && hasFinePointer && !reduceMotion) {
-  let pointerFrame;
-
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      cancelAnimationFrame(pointerFrame);
-      pointerFrame = requestAnimationFrame(() => {
-        ambientSpot.style.left = `${event.clientX}px`;
-        ambientSpot.style.top = `${event.clientY}px`;
-      });
-    },
-    { passive: true },
-  );
-}
 
 const revealElements = document.querySelectorAll(".reveal:not(.show)");
 

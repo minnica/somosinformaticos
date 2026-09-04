@@ -1,124 +1,121 @@
 # SomosInformáticos
 
-Landing informativa con Astro, Tailwind CSS 4, CSS propio y JavaScript nativo, destinada a un despliegue estático en Vercel. Node.js 24 se usa como herramienta de desarrollo y compilación.
+Landing informativa de **SomosInformáticos**, construida con Astro, Tailwind CSS 4, CSS propio y JavaScript nativo. El proyecto genera un sitio estático listo para desplegarse en Vercel.
 
-## Identidad de marca
+## Stack
 
-La paleta de colores de **somosinformaticos.com** será:
+- **Astro 7:** componentes y generación estática de HTML.
+- **Tailwind CSS 4:** reset, tokens de tema y utilidades disponibles mediante `@tailwindcss/vite`.
+- **CSS propio:** sistema visual, layouts, responsive y efectos específicos de la marca.
+- **JavaScript nativo:** menú móvil, apariciones al hacer scroll, efecto de profundidad, botones magnéticos y texto animado.
+- **Node.js 24 y npm:** entorno de desarrollo y compilación.
 
-- `#82963A`
-- `#2F2C39`
-- `#EAE9E9`
-- `#BBBC36`
+Astro entrega el contenido completo desde el HTML inicial y no envía un runtime de interfaz al navegador. El JavaScript se limita a mejoras progresivas; el contenido sigue visible si las animaciones o `IntersectionObserver` no están disponibles.
 
-Esta paleta será la referencia para la futura refactorización visual; su aplicación al sitio está pendiente.
+## Identidad visual
 
-Las palabras y conceptos que definen a la marca son **innovación**, **automatización** y **mejorar rendimiento**. También se contempla **proyección** como alternativa a «mejorar rendimiento», pensando en el SEO. Estos conceptos orientarán los textos y la comunicación de la marca; la elección entre ambas expresiones queda pendiente.
+La interfaz conserva la composición y el lenguaje visual de la landing original: tipografía de gran escala, superficies oscuras, acentos vivos, demostraciones gráficas y llamadas a la acción redondeadas. La paleta ya está aplicada mediante variables y tokens:
 
-## Estado actual
+| Rol | Color |
+| --- | --- |
+| Verde de marca | `#82963A` |
+| Tinta principal | `#2F2C39` |
+| Fondo | `#EAE9E9` |
+| Acento | `#BBBC36` |
 
-El stack está declarado en `package.json`, pero la migración del sitio está pendiente. `index.html` conserva el ejemplo original con sus estilos y scripts inline. Todavía no existen páginas o componentes Astro, configuración de Tailwind ni una entrada de estilos que lo importe.
+Los conceptos de comunicación son **innovación**, **automatización** y **mejorar rendimiento**. «Proyección» se mantiene como alternativa editorial para futuras revisiones de contenido y SEO.
 
-Los scripts ya apuntan a Astro. Astro no utiliza el `index.html` de la raíz como entrada: hasta crear `src/pages/index.astro`, estos comandos no sirven ni compilan la landing original. Un build sin páginas no valida la migración. Cualquier contenido previo de `dist/` corresponde a la compilación anterior con Vite y no representa el stack nuevo.
+## Arquitectura
 
-## Arquitectura elegida
+```text
+astro.config.mjs
+public/
+  favicon.svg
+  robots.txt
+src/
+  components/
+    Contacto.astro
+    Footer.astro
+    Header.astro
+    Hero.astro
+    Identidad.astro
+    Proceso.astro
+    Proyectos.astro
+    Servicios.astro
+  layouts/
+    BaseLayout.astro
+  pages/
+    index.astro
+  scripts/
+    main.js
+  styles/
+    global.css
+```
 
-- **Astro con generación estática:** organiza la página en componentes y genera HTML durante el build. Los componentes Astro no añaden JavaScript al navegador por defecto.
-- **Tailwind CSS 4:** utilidades para composición, responsive, colores y espaciado. Se complementará con CSS propio para efectos visuales específicos.
-- **JavaScript nativo:** menú móvil y animaciones, cargado únicamente donde se necesite. No se requieren React ni un framework de hidratación.
-- **Vercel:** sirve el HTML y los recursos generados. El alcance actual no necesita base de datos ni servidor de aplicación.
+`src/pages/index.astro` compone la landing. `BaseLayout.astro` centraliza el documento, las fuentes y los metadatos. Cada sección vive en un componente independiente; los servicios, pasos y enlaces repetidos se generan a partir de arreglos para facilitar su mantenimiento.
 
-Astro facilita mantener las secciones y centralizar los metadatos sin renunciar a una salida estática. Tailwind mejora la consistencia al iterar el diseño; no aporta SEO por sí mismo. Astro ya utiliza Vite internamente, por lo que no se declara Vite como dependencia directa. Para Tailwind 4 se utiliza `@tailwindcss/vite`, según su guía oficial.
+El antiguo `index.html` de la raíz fue sustituido por la página Astro. `astro.config.mjs` usa salida `static`, registra Tailwind 4 como plugin de Vite y define `https://somosinformaticos.com` como URL canónica del sitio.
 
 ## Desarrollo
 
-Con Node.js 24 y npm instalados, instalar las versiones del lockfile:
+Requiere Node.js 24 y npm. Instala exactamente las versiones del lockfile:
 
 ```sh
 npm ci
 ```
 
-Conservar `package-lock.json` en Git y actualizarlo con `npm install` cuando cambien las dependencias. Los siguientes comandos serán útiles para la landing una vez completada la refactorización:
+Inicia el servidor local:
 
 ```sh
 npm run dev
+```
+
+Genera y revisa el sitio estático:
+
+```sh
 npm run build
 npm run preview
 ```
 
-`build` genera `dist/`. `preview` permite revisar ese resultado localmente; no es un servidor de producción.
+El build se escribe en `dist/`. Tanto `dist/` como `.astro/` son artefactos generados y están excluidos de Git.
 
-## Refactorización pendiente
+## Accesibilidad y comportamiento
 
-Esta estructura es una propuesta para sesiones posteriores; todavía no está creada:
+- La navegación usa enlaces semánticos, estados `aria-expanded` y cierre con la tecla `Escape`.
+- Las animaciones respetan `prefers-reduced-motion`.
+- Las apariciones al hacer scroll son una mejora progresiva: el contenido es visible por defecto.
+- Los elementos gráficos decorativos están ocultos para tecnologías de asistencia.
+- Los estilos de foco son visibles y los textos principales mantienen contraste sobre la paleta de marca.
 
-```text
-astro.config.mjs
-src/
-  pages/index.astro
-  layouts/BaseLayout.astro
-  components/
-    Header.astro
-    Hero.astro
-    Servicios.astro
-    Proyectos.astro
-    Proceso.astro
-    Contacto.astro
-    Footer.astro
-  styles/global.css
-  scripts/main.js
-  assets/
-public/
-  assets/
-  robots.txt
-```
+## SEO
 
-1. Crear `astro.config.mjs` con salida `static`, registrar `tailwindcss()` de `@tailwindcss/vite` en `vite.plugins` y establecer `site` cuando se confirme el dominio de producción.
-2. Crear `src/pages/index.astro` a partir del ejemplo y separar las secciones en componentes. Centralizar el documento HTML y los metadatos en `BaseLayout.astro`.
-3. Importar `tailwindcss` desde `src/styles/global.css` e importar ese archivo en el layout. Definir los colores, fuentes y espaciados del proyecto. Revisar el efecto del reset de Tailwind sobre el diseño existente.
-4. Migrar las interacciones a scripts procesados por Astro y conservar el soporte para movimiento reducido y contenido accesible sin JavaScript.
-5. Colocar imágenes que se quieran procesar con Astro en `src/assets/`. Reservar `public/` para archivos que deban copiarse sin procesamiento, como el video y `robots.txt`.
-6. Añadir `.astro/` a `.gitignore` cuando se configure Astro y validar la página migrada en desarrollo y con un build de producción.
+El layout define idioma, título, descripción, URL canónica, directivas de indexación y metadatos Open Graph y Twitter. `public/robots.txt` permite el rastreo del sitio.
 
-El video y su portada pueden conservar las rutas `/assets/tech-loop.mp4` y `/assets/tech-loop-poster.jpg` colocando los archivos en `public/assets/`. Actualmente están ausentes.
-
-## SEO previsto
-
-Astro y el HTML original pueden entregar contenido completo en el HTML inicial. El cambio de framework no garantiza mejores posiciones; la implementación y el contenido siguen siendo determinantes.
-
-Durante la refactorización:
-
-- Mantener contenido útil que explique los servicios y la propuesta de valor, con encabezados semánticos y enlaces descriptivos.
-- Definir idioma, título, descripción y URL canónica en el layout con el dominio real; añadir metadatos Open Graph para compartir la página.
-- Verificar que la página de producción sea indexable, revisar `robots.txt` y configurar Search Console después del despliegue. Evaluar un sitemap según las URLs publicadas.
-- Optimizar imágenes, video y fuentes, evitar saltos de diseño y medir Core Web Vitals en lugar de asumir mejoras por el stack.
-- Añadir datos estructurados solo cuando correspondan a información real y visible del negocio.
+Antes de publicar, confirma que `https://somosinformaticos.com` será el dominio definitivo. Si cambia, actualiza `site` en `astro.config.mjs`; los metadatos canónicos se regenerarán durante el build. Un sitemap se puede añadir cuando existan más rutas públicas.
 
 ## Despliegue en Vercel
 
-Después de completar y validar la refactorización, importar el repositorio con estos ajustes:
+Configura el proyecto con estos valores:
 
-- Framework Preset: `Astro`.
-- Root Directory: raíz del repositorio.
-- Build Command: `npm run build`.
-- Output Directory: `dist`.
-- Node.js: `24.x`, establecido en `package.json`.
+- Framework Preset: `Astro`
+- Root Directory: raíz del repositorio
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Node.js: `24.x`
 
-El despliegue estático de Astro no requiere `@astrojs/vercel`. La página usa anclas internas y no necesita reglas de reescritura ni un `vercel.json` personalizado. El objetivo del build es producir `dist/index.html` y sus recursos antes de publicar.
+La salida es estática, así que no requiere `@astrojs/vercel` ni un `vercel.json` personalizado.
 
-## Contacto y pendientes del ejemplo
+## Pendientes de contenido
 
-- Completar `https://wa.me/` con el número real en formato internacional, solo dígitos. Opcionalmente añadir `?text=` con el mensaje codificado.
-- Confirmar el destinatario `hola@somosinformaticos.com`. `mailto:` abre el cliente de correo del visitante; no envía correos por sí mismo.
-- Si se incorpora un formulario que envíe cotizaciones desde la página, conectar un servicio de formularios o una función de Vercel con un proveedor de correo. En ese caso, validar los datos y proteger el envío contra abuso; las claves privadas deben permanecer en el servidor. La landing puede continuar siendo estática.
-- Añadir el video y su imagen de portada, o retirar sus referencias cuando se revise el diseño. Actualmente apuntan a archivos ausentes.
-- Revisar como parte de las futuras mejoras que el contenido con `.reveal` siga siendo visible cuando JavaScript esté deshabilitado o falle.
+- Completar `https://wa.me/` con el número real en formato internacional, solo con dígitos. También se puede agregar un mensaje mediante `?text=`.
+- Confirmar que `hola@somosinformaticos.com` sea el destinatario definitivo.
+- Añadir una imagen Open Graph cuando exista un recurso de marca aprobado.
+- Configurar Search Console después del despliegue y medir Core Web Vitals con la URL de producción.
 
 ## Referencias
 
-- [Instalación de Astro](https://docs.astro.build/en/install-and-setup/).
-- [Componentes Astro](https://docs.astro.build/en/basics/astro-components/).
-- [Tailwind CSS con Astro](https://tailwindcss.com/docs/installation/framework-guides/astro).
-- [Astro en Vercel](https://docs.astro.build/en/guides/deploy/vercel/).
-- [Guía de SEO de Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide).
-- [Versiones de Node.js en Vercel](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
+- [Documentación de Astro](https://docs.astro.build/)
+- [Componentes Astro](https://docs.astro.build/en/basics/astro-components/)
+- [Tailwind CSS con Astro](https://tailwindcss.com/docs/installation/framework-guides/astro)
+- [Astro en Vercel](https://docs.astro.build/en/guides/deploy/vercel/)
+- [Guía de SEO de Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)

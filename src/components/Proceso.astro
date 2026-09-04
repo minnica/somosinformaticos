@@ -1,0 +1,45 @@
+---
+const steps = [
+  {
+    title: "Entendemos",
+    description: "Definimos objetivo, audiencia, contenido y qué debe lograr el sitio.",
+  },
+  {
+    title: "Diseñamos",
+    description: "Creamos estructura, jerarquía visual y una experiencia intuitiva.",
+  },
+  {
+    title: "Desarrollamos",
+    description: "Convertimos el diseño en una web rápida, responsiva y funcional.",
+  },
+  {
+    title: "Probamos y lanzamos",
+    description:
+      "Revisamos detalles, rendimiento, formularios y experiencia antes de publicar.",
+  },
+];
+---
+
+<section id="proceso" aria-labelledby="proceso-title">
+  <div class="wrap process-wrap">
+    <div class="sticky-copy reveal">
+      <div class="kicker">04 / Cómo trabajamos</div>
+      <h2 id="proceso-title">Un proceso claro de principio a fin.</h2>
+      <p>
+        Sin cajas negras ni tecnicismos innecesarios. Tú sabes qué estamos haciendo, qué
+        sigue y por qué.
+      </p>
+    </div>
+    <ol class="steps">
+      {
+        steps.map((step, index) => (
+          <li class="step reveal">
+            <div class="step-num">{String(index + 1).padStart(2, "0")}</div>
+            <div><h3>{step.title}</h3><p>{step.description}</p></div>
+            <div class="step-arrow" aria-hidden="true">↗</div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

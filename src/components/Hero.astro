@@ -1,0 +1,79 @@
+---
+const capabilities = [
+  "Landing pages",
+  "Sitios corporativos",
+  "UI/UX",
+  "Responsive",
+  "SEO técnico",
+  "Integraciones",
+  "CMS",
+];
+
+const trustPoints = [
+  "Diseño a medida",
+  "100% responsive",
+  "SEO técnico",
+  "Integraciones",
+];
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="reveal show">
+      <div class="eyebrow"><span class="pulse"></span>Diseño + desarrollo web</div>
+      <h1 id="hero-title">
+        Tu idea merece una web que diga <span class="accent-line">sí.</span>
+      </h1>
+      <p class="lead">
+        Diseñamos y desarrollamos sitios web modernos, rápidos y fáciles de usar para
+        negocios que quieren verse profesionales, generar confianza y convertir visitas
+        en oportunidades.
+      </p>
+      <div class="actions">
+        <a class="btn lime magnetic" href="#contacto">
+          Quiero una web <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="btn soft" href="#proyectos">Ver proyectos</a>
+      </div>
+      <div class="trust" aria-label="Características del servicio">
+        {trustPoints.map((point) => <span>{point}</span>)}
+      </div>
+    </div>
+
+    <div class="hero-media reveal show" id="heroTilt">
+      <div class="media-main">
+        <div class="media-atmosphere" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="terminal-window">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="type-line">
+            ¿Necesitas una web que sí funcione? <b>Si_</b><span class="cursor"></span>
+          </div>
+        </div>
+        <div class="media-copy">
+          <small>SomosInformáticos / web studio</small>
+          <h2>Diseño que atrae.<br /><span>Código que responde.</span></h2>
+          <small>Tu sitio listo para verse bien en cualquier pantalla.</small>
+        </div>
+      </div>
+      <div class="float-card fc1">
+        <small>Experiencia</small><b>Simple.</b><small>Clara · rápida · intuitiva</small>
+      </div>
+      <div class="float-card fc2">
+        <small>Respuesta</small><b>Si_</b><small>Lo hacemos realidad.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="Servicios y capacidades">
+  <div class="ticker-track">
+    <div class="ticker-group">
+      {capabilities.map((capability) => <span>{capability}</span>)}
+    </div>
+    <div class="ticker-group" aria-hidden="true">
+      {capabilities.map((capability) => <span>{capability}</span>)}
+    </div>
+  </div>
+</div>

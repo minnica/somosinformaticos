@@ -1,0 +1,121 @@
+---
+const services = [
+  {
+    number: "01",
+    label: "Diseño + desarrollo",
+    icon: "↗",
+    title: "Sitios que se ven increíbles y trabajan mejor.",
+    description:
+      "Diseñamos interfaces claras y las convertimos en sitios rápidos, responsivos y listos para crecer contigo.",
+    variant: "big",
+    visual: "browser",
+    chips: ["UI/UX", "Frontend", "Responsive", "Performance"],
+  },
+  {
+    number: "02",
+    label: "Landing pages",
+    icon: "◎",
+    title: "Una página. Un objetivo claro.",
+    description:
+      "Landing pages enfocadas en campañas, servicios, lanzamientos y generación de prospectos.",
+    variant: "accent",
+    visual: "landing",
+  },
+  {
+    number: "03",
+    label: "Sitios administrables",
+    icon: "▦",
+    title: "Tu contenido, bajo tu control.",
+    description:
+      "Sitios con CMS para editar textos, imágenes, servicios y contenido sin depender de código.",
+    variant: "green",
+    visual: "cms",
+  },
+  {
+    number: "04",
+    label: "SEO + rendimiento",
+    icon: "⌁",
+    title: "Rápida, encontrable y bien construida.",
+    description:
+      "Optimizamos estructura, velocidad, accesibilidad y SEO técnico desde la base.",
+    variant: "paper",
+    visual: "seo",
+  },
+  {
+    number: "05",
+    label: "Integraciones",
+    icon: "+",
+    title: "Tu sitio conectado con lo que necesitas.",
+    description:
+      "Formularios, reservas, pagos, analítica, CRM, APIs y automatizaciones para convertir tu web en una herramienta de negocio.",
+    variant: "paper",
+    chips: ["APIs", "Analytics", "Pagos", "Reservas"],
+  },
+];
+---
+
+<section id="servicios" aria-labelledby="servicios-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">01 / Desarrollo web</div>
+      <div>
+        <h2 id="servicios-title">Todo lo que una buena web necesita. Sin complicarlo.</h2>
+        <p>
+          Nos enfocamos únicamente en experiencias digitales: desde una landing que
+          convierte hasta un sitio corporativo completo con contenido administrable e
+          integraciones.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-grid">
+      {
+        services.map((service) => (
+          <article class:list={["service-card", service.variant, "reveal"]}>
+            <div class="service-top">
+              <span class="service-num">{service.number} · {service.label}</span>
+              <div class="svc-icon" aria-hidden="true">{service.icon}</div>
+            </div>
+
+            {service.visual === "browser" && (
+              <div class="browser-demo" aria-hidden="true">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mini-site">
+                  <div class="mini-copy"><span></span><span></span><span></span><span></span></div>
+                  <div class="mini-art"></div>
+                </div>
+              </div>
+            )}
+
+            {service.visual === "landing" && (
+              <div class="email-demo" aria-hidden="true">
+                <div class="email-row"></div><div class="email-row"></div>
+                <div class="email-row"></div><div class="email-row"></div>
+              </div>
+            )}
+
+            {service.visual === "cms" && (
+              <div class="cms-demo" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            )}
+
+            {service.visual === "seo" && (
+              <div class="seo-demo" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            )}
+
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              {service.chips && (
+                <div class="chiprow">
+                  {service.chips.map((chip) => <span class="chip">{chip}</span>)}
+                </div>
+              )}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

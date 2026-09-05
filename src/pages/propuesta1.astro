@@ -1,0 +1,135 @@
+---
+import ProposalLayout from "../layouts/ProposalLayout.astro";
+import "../styles/propuesta1.css";
+
+const whatsappUrl =
+  "https://wa.me/525521149127?text=Hola%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20para%20automatizar%20procesos%20en%20mi%20empresa.";
+
+const projects = [
+  { id: "agenda", type: "Aplicación web", name: "Sistema de agenda", copy: "Horarios, disponibilidad y seguimiento reunidos en un flujo claro.", mark: "AG" },
+  { id: "pos", type: "Operación", name: "Sistema punto de venta", copy: "Ventas, productos y cortes listos para consultarse desde un solo lugar.", mark: "PV" },
+  { id: "nomina", type: "Administración", name: "Sistema de nómina", copy: "Procesos internos ordenados para reducir capturas repetidas y errores.", mark: "NÓ" },
+  { id: "crm", type: "Relación con clientes", name: "Sistema CRM", copy: "Prospectos, conversaciones y oportunidades con trazabilidad real.", mark: "CR" },
+  { id: "landing", type: "Presencia digital", name: "Landing page", copy: "Una propuesta directa, diseñada para explicar, convencer y convertir.", mark: "LP" },
+];
+---
+
+<ProposalLayout
+  title="Propuesta 1 — SomosInformáticos"
+  description="Aplicaciones web, automatización de procesos y sitios que convierten."
+  canonicalPath="/propuesta1"
+  themeColor="#1337eb"
+  fontHref="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap"
+  bodyClass="proposal-one"
+>
+  <a class="p1-skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="p1-header" data-header>
+    <a class="p1-brand" href="#inicio" aria-label="SomosInformáticos, inicio de propuesta 1">
+      <span>Si<span aria-hidden="true">_</span></span>
+      <b>SomosInformáticos</b>
+    </a>
+    <nav class="p1-nav" aria-label="Navegación principal">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#metodo">Método</a>
+    </nav>
+    <a class="p1-top-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+      Pedir cotización <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main id="contenido">
+    <section class="p1-hero" id="inicio" aria-labelledby="p1-title">
+      <div class="p1-hero-copy">
+        <p class="p1-availability"><span aria-hidden="true"></span> Desarrollo a la medida · México / remoto</p>
+        <h1 id="p1-title">Menos procesos.<br /><em>Más avance.</em></h1>
+        <p class="p1-lead">Aplicaciones web a medida, automatización de procesos y sitios que convierten. Una solución digital conectada a la forma en que tu empresa trabaja.</p>
+        <div class="p1-actions">
+          <a class="p1-button p1-button-coral" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.8c.4 2 1.6 3.4 3.8 4.4l1.2-1 2 1.2c-.2 1.4-1 2.1-2.4 2.1-3.2-.4-5.8-2.8-6.2-6 0-1.1.5-1.8 1.6-2.1Z"/></svg>
+            Pedir cotización por WhatsApp
+          </a>
+          <a class="p1-text-link" href="#proyectos">Ver proyectos <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="p1-transform" role="img" aria-label="Una solicitud manual se transforma en un flujo automatizado y termina en un panel organizado">
+        <div class="p1-transform-label p1-label-before">Antes</div>
+        <div class="p1-mini-window p1-sheet" aria-hidden="true">
+          <div class="p1-window-top"><i></i><i></i><i></i><span>solicitudes.xlsx</span></div>
+          <div class="p1-sheet-grid"><b>Cliente</b><b>Estado</b><span>Norte</span><span>Pendiente</span><span>Álamo</span><span>Pendiente</span><span>Delta</span><span>Revisar</span></div>
+        </div>
+        <div class="p1-automation" aria-hidden="true">
+          <div class="p1-auto-head"><span>Si_ flow</span><b>Activo</b></div>
+          <ol>
+            <li><i>1</i><span><b>Recibe</b><small>Nueva solicitud</small></span></li>
+            <li><i>2</i><span><b>Valida</b><small>Datos completos</small></span></li>
+            <li><i>3</i><span><b>Asigna</b><small>Responsable listo</small></span></li>
+          </ol>
+        </div>
+        <div class="p1-transform-label p1-label-after">Después</div>
+        <div class="p1-mini-window p1-result" aria-hidden="true">
+          <div class="p1-window-top"><i></i><i></i><i></i><span>operación</span></div>
+          <div class="p1-result-body"><aside><b>Si_</b><i></i><i></i><i></i></aside><div><span>Solicitudes</span><strong>Todo en orden.</strong><p><i></i><i></i><i></i></p><p><i></i><i></i></p></div></div>
+        </div>
+        <span class="p1-moving-square" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <div class="p1-capabilities" aria-label="Capacidades principales">
+      <span>Aplicaciones web</span><span>Automatización</span><span>Sitios que convierten</span>
+    </div>
+
+    <section class="p1-flow" id="soluciones" aria-labelledby="p1-flow-title">
+      <div class="p1-flow-intro p1-reveal">
+        <h2 id="p1-flow-title">Una sola transformación, todo conectado.</h2>
+        <p>Entendemos tu operación, eliminamos fricción y construimos la herramienta que hace avanzar al equipo y al negocio.</p>
+      </div>
+      <ol class="p1-flow-line">
+        <li class="p1-reveal"><span>Entender</span><h3>Mapeamos la operación</h3><p>Detectamos tareas manuales, decisiones repetidas y datos aislados.</p></li>
+        <li class="p1-reveal"><span>Conectar</span><h3>Diseñamos el flujo</h3><p>Unimos personas, información y reglas en una experiencia clara.</p></li>
+        <li class="p1-reveal"><span>Construir</span><h3>Creamos la aplicación</h3><p>Desarrollamos una solución rápida, segura y lista para evolucionar.</p></li>
+        <li class="p1-reveal"><span>Impulsar</span><h3>Medimos y mejoramos</h3><p>Acompañamos el lanzamiento y priorizamos el siguiente avance.</p></li>
+      </ol>
+    </section>
+
+    <section class="p1-projects" id="proyectos" aria-labelledby="p1-projects-title">
+      <div class="p1-projects-heading p1-reveal">
+        <h2 id="p1-projects-title">Proyectos que ya están avanzando.</h2>
+        <p>Cinco maneras de convertir una necesidad operativa o comercial en una herramienta útil.</p>
+      </div>
+      <div class="p1-project-mosaic">
+        {projects.map((project, index) => (
+          <article class:list={["p1-project", `p1-project-${project.id}`, "p1-reveal"]} style={`--project-index:${index}`}>
+            <div class="p1-project-visual" aria-hidden="true"><span>{project.mark}</span><i></i><i></i><i></i></div>
+            <div class="p1-project-copy"><span>{project.type}</span><h3>{project.name}</h3><p>{project.copy}</p></div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="p1-method" id="metodo" aria-labelledby="p1-method-title">
+      <div class="p1-method-main p1-reveal">
+        <h2 id="p1-method-title">La tecnología no debería sentirse como otra complicación.</h2>
+        <p>Hablamos de tu operación antes que de herramientas. Cada decisión tiene que simplificar el trabajo, acelerar una respuesta o abrir una oportunidad.</p>
+      </div>
+      <div class="p1-method-note p1-reveal"><b>Claro desde el inicio.</b><span>Alcance, prioridades y siguientes pasos sin cajas negras.</span></div>
+    </section>
+
+    <section class="p1-contact" aria-labelledby="p1-contact-title">
+      <p>¿Qué proceso te está frenando hoy?</p>
+      <h2 id="p1-contact-title">Convirtámoslo en tu siguiente ventaja.</h2>
+      <a class="p1-button p1-button-dark" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Pedir una cotización <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="p1-footer"><b>Si_ SomosInformáticos</b><span>Aplicaciones · Automatización · Web</span><a href="#inicio">Volver arriba ↑</a></footer>
+
+  <a class="p1-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Pedir cotización por WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.8c.4 2 1.6 3.4 3.8 4.4l1.2-1 2 1.2c-.2 1.4-1 2.1-2.4 2.1-3.2-.4-5.8-2.8-6.2-6 0-1.1.5-1.8 1.6-2.1Z"/></svg>
+    <span>Cotizar</span>
+  </a>
+
+  <script src="../scripts/propuesta1.js"></script>
+</ProposalLayout>

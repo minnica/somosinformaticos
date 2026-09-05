@@ -1,0 +1,111 @@
+---
+import ProposalLayout from "../layouts/ProposalLayout.astro";
+import "../styles/propuesta2.css";
+
+const whatsappUrl =
+  "https://wa.me/525521149127?text=Hola%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20para%20automatizar%20procesos%20en%20mi%20empresa.";
+
+const projects = [
+  { code: "AGENDA", name: "Sistema de agenda", copy: "Disponibilidad y seguimiento sin cruces manuales.", tone: "cyan" },
+  { code: "VENTA", name: "Sistema punto de venta", copy: "Una operación comercial conectada en cada movimiento.", tone: "coral" },
+  { code: "NÓMINA", name: "Sistema de nómina", copy: "Información interna organizada en un proceso confiable.", tone: "violet" },
+  { code: "CRM", name: "Sistema CRM", copy: "Cada relación y oportunidad dentro del mismo flujo.", tone: "cyan" },
+  { code: "WEB", name: "Landing page", copy: "Servicios claros y una ruta directa hacia la conversación.", tone: "coral" },
+];
+---
+
+<ProposalLayout
+  title="Propuesta 2 — SomosInformáticos"
+  description="Conectamos procesos, datos y equipos con aplicaciones web hechas a la medida."
+  canonicalPath="/propuesta2"
+  themeColor="#0b0815"
+  fontHref="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+  bodyClass="proposal-two"
+>
+  <a class="p2-skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="p2-header" data-header>
+    <a class="p2-brand" href="#inicio" aria-label="SomosInformáticos, inicio de propuesta 2"><b>Si_</b><span>SomosInformáticos</span></a>
+    <nav class="p2-nav" aria-label="Navegación principal"><a href="#flujo">El flujo</a><a href="#soluciones">Soluciones</a><a href="#proyectos">Proyectos</a></nav>
+    <a class="p2-top-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Cotizar <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="contenido">
+    <section class="p2-hero" id="inicio" aria-labelledby="p2-title">
+      <img class="p2-atmosphere" src="/propuesta2/hero-atmosphere.webp" alt="Espacio digital nocturno iluminado en cian y coral" width="1920" height="1200" fetchpriority="high" />
+      <div class="p2-shade" aria-hidden="true"></div>
+      <div class="p2-hero-copy">
+        <p class="p2-signal"><span></span> Sistemas digitales para operaciones reales</p>
+        <h1 id="p2-title">Tu negocio,<br />en modo <em>automático.</em></h1>
+        <p>Conectamos procesos, datos y equipos con aplicaciones web hechas a la medida.</p>
+        <div class="p2-actions">
+          <a class="p2-button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.8c.4 2 1.6 3.4 3.8 4.4l1.2-1 2 1.2c-.2 1.4-1 2.1-2.4 2.1-3.2-.4-5.8-2.8-6.2-6 0-1.1.5-1.8 1.6-2.1Z"/></svg>
+            Pedir cotización
+          </a>
+          <a class="p2-text-link" href="#flujo">Explorar soluciones <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="p2-process-stage" role="img" aria-label="Las tareas manuales se convierten en un sistema conectado y después en una operación que avanza">
+        <svg class="p2-energy" viewBox="0 0 900 260" aria-hidden="true">
+          <defs><filter id="p2-glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <path class="p2-path-coral" d="M0 118 C110 25 180 215 290 125 S470 55 570 126" />
+          <path class="p2-path-cyan" d="M278 128 C380 42 450 222 575 126 S760 74 900 124" />
+          <path class="p2-path-thin" d="M0 150 C100 78 190 190 292 145 S485 82 570 144 S770 92 900 148" />
+        </svg>
+        <div class="p2-module p2-module-manual"><span>Tareas manuales</span><b>Datos aislados</b><i aria-hidden="true">···</i></div>
+        <div class="p2-module p2-module-system"><span>Sistema conectado</span><b>Un solo flujo</b><i aria-hidden="true">◇</i></div>
+        <div class="p2-module p2-module-progress"><span>Operación que avanza</span><b>Decisiones claras</b><i aria-hidden="true">→</i></div>
+      </div>
+      <div class="p2-scroll-cue" aria-hidden="true"><span></span> Desplaza para conectar</div>
+    </section>
+
+    <section class="p2-journey" id="flujo" aria-labelledby="p2-journey-title">
+      <div class="p2-journey-heading p2-reveal"><p>Del ruido al sistema</p><h2 id="p2-journey-title">La automatización se entiende cuando puedes verla.</h2></div>
+      <div class="p2-journey-track" aria-hidden="true"><i></i></div>
+      <article class="p2-chapter p2-chapter-one p2-reveal"><span>01</span><div><h3>Detectar</h3><p>Observamos qué tareas consumen tiempo, dónde se repiten capturas y qué información llega tarde.</p></div><div class="p2-orbit"><i></i><i></i><i></i></div></article>
+      <article class="p2-chapter p2-chapter-two p2-reveal"><span>02</span><div><h3>Conectar</h3><p>Diseñamos una ruta única para los datos, el equipo y las decisiones que sostienen la operación.</p></div><div class="p2-node-map"><i></i><i></i><i></i><i></i></div></article>
+      <article class="p2-chapter p2-chapter-three p2-reveal"><span>03</span><div><h3>Automatizar</h3><p>Construimos la aplicación, la integramos y acompañamos al equipo hasta que el nuevo flujo se vuelve natural.</p></div><div class="p2-pulse-arrow">→</div></article>
+    </section>
+
+    <section class="p2-solutions" id="soluciones" aria-labelledby="p2-solutions-title">
+      <div class="p2-solutions-copy p2-reveal"><h2 id="p2-solutions-title">No instalamos complejidad.<br />Construimos continuidad.</h2><p>La solución puede empezar en un proceso interno, una aplicación a medida o la página donde tus clientes descubren lo que haces.</p></div>
+      <div class="p2-solution-list">
+        <div class="p2-reveal"><span>Aplicaciones web</span><p>Herramientas hechas alrededor de tu operación, no al revés.</p><i aria-hidden="true">01</i></div>
+        <div class="p2-reveal"><span>Automatización</span><p>Menos tareas repetidas, más información lista para decidir.</p><i aria-hidden="true">02</i></div>
+        <div class="p2-reveal"><span>Sitios web</span><p>Una presencia profesional que convierte interés en conversación.</p><i aria-hidden="true">03</i></div>
+      </div>
+    </section>
+
+    <section class="p2-projects" id="proyectos" aria-labelledby="p2-projects-title">
+      <div class="p2-projects-head p2-reveal"><p>Proyectos realizados</p><h2 id="p2-projects-title">Soluciones distintas.<br />Un mismo principio: avanzar.</h2></div>
+      <div class="p2-project-strips">
+        {projects.map((project, index) => (
+          <article class:list={["p2-project", `is-${project.tone}`, "p2-reveal"]} style={`--project-index:${index}`}>
+            <span class="p2-project-code">{project.code}</span>
+            <div><h3>{project.name}</h3><p>{project.copy}</p></div>
+            <div class="p2-project-art" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="p2-project-arrow" aria-hidden="true">↗</span>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="p2-contact" aria-labelledby="p2-contact-title">
+      <div class="p2-contact-signal" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+      <p>Tu siguiente sistema puede empezar con una conversación.</p>
+      <h2 id="p2-contact-title">Conectemos el problema.<br /><em>Activemos la solución.</em></h2>
+      <a class="p2-button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Pedir cotización por WhatsApp <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="p2-footer"><b>Si_ SomosInformáticos</b><span>Aplicaciones web · Automatización · Presencia digital</span><a href="#inicio">Volver arriba ↑</a></footer>
+
+  <a class="p2-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Pedir cotización por WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.8c.4 2 1.6 3.4 3.8 4.4l1.2-1 2 1.2c-.2 1.4-1 2.1-2.4 2.1-3.2-.4-5.8-2.8-6.2-6 0-1.1.5-1.8 1.6-2.1Z"/></svg>
+    <span>Pedir cotización</span>
+  </a>
+
+  <script src="../scripts/propuesta2.js"></script>
+</ProposalLayout>

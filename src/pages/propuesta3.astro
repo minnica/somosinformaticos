@@ -1,0 +1,221 @@
+---
+import ProposalLayout from "../layouts/ProposalLayout.astro";
+import "../styles/propuesta3.css";
+
+const whatsappUrl =
+  "https://wa.me/525521149127?text=Hola%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20para%20automatizar%20procesos%20en%20mi%20empresa.";
+
+const projects = [
+  { tag: "Operación", title: "Sistema de agenda", copy: "Disponibilidad, confirmaciones y seguimiento reunidos en un flujo que no se detiene.", mark: "A" },
+  { tag: "Comercio", title: "Punto de venta", copy: "Ventas, inventario y decisiones conectadas en el momento exacto.", mark: "V" },
+  { tag: "Equipo", title: "Sistema de nómina", copy: "La información interna deja de perseguirse y empieza a llegar a tiempo.", mark: "N" },
+  { tag: "Crecimiento", title: "CRM a medida", copy: "Cada conversación comercial avanza con contexto, orden y una siguiente acción.", mark: "C" },
+  { tag: "Presencia", title: "Landing pages", copy: "Una idea compleja se convierte en una experiencia clara que invita a conversar.", mark: "W" },
+];
+---
+
+<ProposalLayout
+  title="Propuesta 3 — SomosInformáticos"
+  description="Automatización, aplicaciones web y experiencias digitales que convierten trabajo manual en avance real."
+  canonicalPath="/propuesta3"
+  themeColor="#1746f5"
+  fontHref="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+  bodyClass="proposal-three"
+>
+  <a class="p3-skip" href="#p3-content">Saltar al contenido</a>
+
+  <div class="p3-progress" aria-hidden="true"><span></span></div>
+
+  <header class="p3-header" data-p3-header>
+    <a class="p3-brand" href="#p3-start" aria-label="SomosInformáticos, inicio de propuesta 3">
+      <span class="p3-brand-mark">Si_</span>
+      <span class="p3-brand-name">SomosInformáticos</span>
+    </a>
+    <nav class="p3-nav" aria-label="Navegación principal">
+      <a href="#p3-system">Cómo funciona</a>
+      <a href="#p3-work">Proyectos</a>
+      <a href="#p3-contact">Contacto</a>
+    </nav>
+    <a class="p3-header-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+      Iniciar proyecto
+      <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" /></svg>
+    </a>
+  </header>
+
+  <main id="p3-content">
+    <section class="p3-hero" id="p3-start" aria-labelledby="p3-title">
+      <div class="p3-hero-copy">
+        <p class="p3-hero-signal"><span></span> Sistemas digitales para empresas en movimiento</p>
+        <h1 id="p3-title">
+          <span class="p3-title-line">Tu operación</span>
+          <span class="p3-title-line is-shifted">puede moverse</span>
+          <span class="p3-title-line is-accent">sola.</span>
+        </h1>
+        <div class="p3-hero-bottom">
+          <p>Diseñamos aplicaciones y automatizaciones que eliminan pasos repetidos, conectan información y hacen visible el siguiente movimiento.</p>
+          <div class="p3-actions">
+            <a class="p3-button p3-button-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Cotizar una solución
+              <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" /></svg>
+            </a>
+            <a class="p3-inline-link" href="#p3-system">Ver la transformación <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="p3-machine" data-p3-machine role="img" aria-label="Un flujo visual transforma pedidos, agenda y datos en una operación sincronizada">
+        <div class="p3-machine-noise" aria-hidden="true"></div>
+        <div class="p3-input-stack" aria-hidden="true">
+          <span class="p3-input is-one">PEDIDOS</span>
+          <span class="p3-input is-two">AGENDA</span>
+          <span class="p3-input is-three">DATOS</span>
+        </div>
+        <svg class="p3-machine-rails" viewBox="0 0 760 620" aria-hidden="true">
+          <path class="p3-rail p3-rail-one" d="M40 108 C176 108 184 234 302 234 H438 C550 234 554 118 720 118" />
+          <path class="p3-rail p3-rail-two" d="M40 310 H212 C302 310 302 410 394 410 H720" />
+          <path class="p3-rail p3-rail-three" d="M40 514 C176 514 186 380 300 380 H458 C552 380 576 512 720 512" />
+          <circle class="p3-rail-node p3-node-one" cx="302" cy="234" r="8" />
+          <circle class="p3-rail-node p3-node-two" cx="394" cy="410" r="8" />
+          <circle class="p3-rail-node p3-node-three" cx="552" cy="234" r="8" />
+        </svg>
+        <div class="p3-core" aria-hidden="true">
+          <span class="p3-core-ring"></span>
+          <span class="p3-core-ring is-inner"></span>
+          <b>SI</b>
+          <i>motor digital</i>
+        </div>
+        <div class="p3-output" aria-hidden="true">
+          <span>OPERACIÓN</span>
+          <strong>SINCRONIZADA</strong>
+          <i><b></b> sistema activo</i>
+        </div>
+        <p class="p3-machine-caption" aria-hidden="true">ENTRADAS → LÓGICA → AVANCE</p>
+      </div>
+    </section>
+
+    <section class="p3-manifesto" aria-label="Propuesta de valor">
+      <p data-p3-reveal>Lo repetitivo no necesita más esfuerzo.</p>
+      <h2 data-p3-reveal>Necesita un sistema que <em>piense en movimiento.</em></h2>
+      <div class="p3-manifesto-note" data-p3-reveal>
+        <span>De la fricción</span>
+        <svg aria-hidden="true" viewBox="0 0 110 24"><path d="M2 12h102M96 4l10 8-10 8" /></svg>
+        <span>al flujo</span>
+      </div>
+    </section>
+
+    <section class="p3-system" id="p3-system" aria-labelledby="p3-system-title">
+      <div class="p3-system-sticky">
+        <div class="p3-system-copy">
+          <p class="p3-system-index">Una transformación en tres movimientos</p>
+          <h2 id="p3-system-title">Construimos la ruta. El trabajo empieza a fluir.</h2>
+          <div class="p3-stage-copy is-active" data-p3-stage="0">
+            <span>Entrada</span>
+            <h3>Detectamos dónde se rompe el ritmo.</h3>
+            <p>Tareas duplicadas, capturas manuales, información aislada y decisiones que llegan tarde.</p>
+          </div>
+          <div class="p3-stage-copy" data-p3-stage="1">
+            <span>Lógica</span>
+            <h3>Diseñamos un sistema alrededor de tu operación.</h3>
+            <p>La tecnología se adapta a las personas, las reglas y los momentos reales del negocio.</p>
+          </div>
+          <div class="p3-stage-copy" data-p3-stage="2">
+            <span>Impulso</span>
+            <h3>Automatizamos lo repetible. Tu equipo mueve lo importante.</h3>
+            <p>Menos seguimiento manual, más visibilidad y una operación preparada para crecer.</p>
+          </div>
+        </div>
+
+        <div class="p3-assembly" aria-hidden="true">
+          <div class="p3-assembly-step is-input"><span>01</span><b>SEÑAL</b><i></i></div>
+          <div class="p3-assembly-step is-logic"><span>02</span><b>SISTEMA</b><i></i></div>
+          <div class="p3-assembly-step is-output"><span>03</span><b>RESULTADO</b><i></i></div>
+          <div class="p3-assembly-track"><span></span></div>
+          <div class="p3-assembly-puck"><b>Si_</b></div>
+          <svg viewBox="0 0 540 620" class="p3-assembly-map">
+            <path d="M60 88 H204 C275 88 275 212 345 212 H480" />
+            <path d="M60 310 H480" />
+            <path d="M60 530 H204 C275 530 275 404 345 404 H480" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="p3-capabilities" aria-labelledby="p3-capabilities-title">
+      <div class="p3-capabilities-heading" data-p3-reveal>
+        <h2 id="p3-capabilities-title">Una sola capacidad:<br />hacer que avance.</h2>
+        <p>Combinamos estrategia, diseño y desarrollo para intervenir donde el negocio necesita velocidad y claridad.</p>
+      </div>
+      <div class="p3-capability-list">
+        <article data-p3-capability>
+          <span class="p3-capability-type">Construir</span>
+          <h3>Aplicaciones web a medida</h3>
+          <p>Herramientas que siguen la lógica de tu empresa y crecen con ella.</p>
+          <svg aria-hidden="true" viewBox="0 0 48 48"><path d="M8 12h32v24H8zM8 19h32M15 15h.1M20 15h.1" /></svg>
+        </article>
+        <article data-p3-capability>
+          <span class="p3-capability-type">Conectar</span>
+          <h3>Automatización de procesos</h3>
+          <p>Datos, acciones y equipos coordinados sin persecuciones manuales.</p>
+          <svg aria-hidden="true" viewBox="0 0 48 48"><circle cx="13" cy="24" r="5"/><circle cx="35" cy="13" r="5"/><circle cx="35" cy="35" r="5"/><path d="M18 22l12-6M18 27l12 6" /></svg>
+        </article>
+        <article data-p3-capability>
+          <span class="p3-capability-type">Presentar</span>
+          <h3>Sitios y experiencias digitales</h3>
+          <p>Una presencia profesional que explica valor y abre conversaciones.</p>
+          <svg aria-hidden="true" viewBox="0 0 48 48"><path d="M9 9h30v30H9zM9 17h30M16 24h16M16 30h10" /></svg>
+        </article>
+      </div>
+    </section>
+
+    <section class="p3-work" id="p3-work" aria-labelledby="p3-work-title">
+      <div class="p3-work-heading" data-p3-reveal>
+        <p>Prueba en producción</p>
+        <h2 id="p3-work-title">Ya convertimos problemas reales en sistemas que funcionan.</h2>
+      </div>
+      <div class="p3-project-list">
+        {projects.map((project, index) => (
+          <article class="p3-project" data-p3-project style={`--p3-project-index:${index}`}>
+            <span class="p3-project-count">0{index + 1}</span>
+            <div class="p3-project-copy">
+              <p>{project.tag}</p>
+              <h3>{project.title}</h3>
+              <span>{project.copy}</span>
+            </div>
+            <div class="p3-project-mark" aria-hidden="true"><i>{project.mark}</i><b></b></div>
+            <svg class="p3-project-arrow" aria-hidden="true" viewBox="0 0 32 32"><path d="M5 27 27 5M10 5h17v17" /></svg>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="p3-contact" id="p3-contact" aria-labelledby="p3-contact-title">
+      <div class="p3-contact-orbit" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <b>Si_</b>
+      </div>
+      <div class="p3-contact-copy">
+        <p>El próximo movimiento puede empezar hoy.</p>
+        <h2 id="p3-contact-title">Cuéntanos qué está frenando tu operación.</h2>
+        <a class="p3-button p3-button-light" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          Hablar por WhatsApp
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p3-footer">
+    <a href="#p3-start" class="p3-brand" aria-label="Volver al inicio"><span class="p3-brand-mark">Si_</span><span class="p3-brand-name">SomosInformáticos</span></a>
+    <p>Aplicaciones web · Automatización · Experiencias digitales</p>
+    <a href="#p3-start">Volver arriba <span aria-hidden="true">↑</span></a>
+  </footer>
+
+  <a class="p3-float-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Solicitar cotización por WhatsApp">
+    <span>Cotizar</span>
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.8c.4 2 1.6 3.4 3.8 4.4l1.2-1 2 1.2c-.2 1.4-1 2.1-2.4 2.1-3.2-.4-5.8-2.8-6.2-6 0-1.1.5-1.8 1.6-2.1Z"/></svg>
+  </a>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="../scripts/propuesta3.js"></script>
+</ProposalLayout>

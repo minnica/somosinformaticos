@@ -1,0 +1,231 @@
+---
+import ProposalLayout from "../layouts/ProposalLayout.astro";
+import "../styles/propuesta4.css";
+
+const whatsappUrl =
+  "https://wa.me/525521149127?text=Hola%2C%20quiero%20convertir%20un%20proceso%20manual%20en%20una%20soluci%C3%B3n%20digital.";
+
+const transformations = [
+  {
+    source: "Solicitudes por mensajes",
+    system: "Agenda conectada",
+    result: "Cada cita confirmada",
+    code: "AGD",
+  },
+  {
+    source: "Inventario en archivos",
+    system: "Punto de venta",
+    result: "Existencias al momento",
+    code: "POS",
+  },
+  {
+    source: "Seguimiento de memoria",
+    system: "CRM a medida",
+    result: "Cada oportunidad avanza",
+    code: "CRM",
+  },
+];
+
+const projects = [
+  { type: "Operación", name: "Sistema de agenda", description: "Reservas, disponibilidad y confirmaciones en un solo recorrido.", glyph: "24:7" },
+  { type: "Comercio", name: "Punto de venta", description: "Ventas e inventario conectados para decidir con datos actuales.", glyph: "POS" },
+  { type: "Gestión", name: "Sistema de nómina", description: "Información del equipo ordenada, disponible y lista para actuar.", glyph: "NOM" },
+  { type: "Crecimiento", name: "CRM a medida", description: "Contexto comercial y próximas acciones sin cabos sueltos.", glyph: "CRM" },
+  { type: "Presencia", name: "Landing pages", description: "Mensajes complejos convertidos en experiencias que abren conversaciones.", glyph: "WEB" },
+];
+---
+
+<ProposalLayout
+  title="Propuesta 4 — SomosInformáticos"
+  description="Sistemas digitales, automatización y experiencias web para que tu empresa opere con claridad y avance sin fricción."
+  canonicalPath="/propuesta4"
+  themeColor="#07172d"
+  fontHref="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+  bodyClass="proposal-four"
+>
+  <a class="p4-skip" href="#p4-main">Saltar al contenido</a>
+
+  <header class="p4-header" data-p4-header>
+    <a class="p4-brand" href="#inicio" aria-label="SomosInformáticos, ir al inicio">
+      <svg aria-hidden="true" viewBox="0 0 42 42">
+        <path d="M8 8h10v10H8zM24 8h10v10H24zM8 24h10v10H8z" />
+        <path class="p4-brand-live" d="M24 29h10" />
+      </svg>
+      <span>Somos<br />Informáticos</span>
+    </a>
+
+    <nav class="p4-nav" aria-label="Navegación principal">
+      <a href="#sistema">Soluciones</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#metodo">Método</a>
+    </nav>
+
+    <a class="p4-nav-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+      Abrir conversación <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main id="p4-main">
+    <section class="p4-hero" id="inicio" aria-labelledby="p4-title">
+      <div class="p4-hero-grid" aria-hidden="true"></div>
+      <div class="p4-hero-copy">
+        <p class="p4-kicker"><span></span> Tecnología hecha alrededor de tu empresa</p>
+        <h1 id="p4-title">Tu operación,<br /><em>en otra órbita.</em></h1>
+        <p class="p4-hero-lead">Diseñamos aplicaciones y automatizaciones que conectan tareas, datos y decisiones. Menos seguimiento manual. Más avance visible.</p>
+        <div class="p4-hero-actions">
+          <a class="p4-button p4-button-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            Diseñar mi solución
+            <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5" /></svg>
+          </a>
+          <a class="p4-text-link" href="#proyectos">Ver trabajo realizado <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="p4-orbit" data-p4-orbit role="img" aria-label="Representación de tareas, datos y equipos conectándose en un núcleo digital">
+        <div class="p4-orbit-field" aria-hidden="true">
+          <span class="p4-coordinate is-top">19°25' · OPERACIÓN</span>
+          <span class="p4-coordinate is-bottom">99°08' · EN LÍNEA</span>
+          <div class="p4-ring is-outer"><i></i></div>
+          <div class="p4-ring is-middle"><i></i><i></i></div>
+          <div class="p4-ring is-inner"></div>
+          <div class="p4-core">
+            <small>NÚCLEO</small>
+            <strong>Si</strong>
+            <span><i></i> activo</span>
+          </div>
+          <div class="p4-satellite is-task"><span>TAREAS</span><b>12</b></div>
+          <div class="p4-satellite is-data"><span>DATOS</span><b>∞</b></div>
+          <div class="p4-satellite is-team"><span>EQUIPO</span><b>01</b></div>
+        </div>
+        <p class="p4-orbit-caption"><span>SEÑALES AISLADAS</span><b></b><span>UN SOLO SISTEMA</span></p>
+      </div>
+
+      <div class="p4-scroll-note" aria-hidden="true"><span></span> Explorar el sistema</div>
+    </section>
+
+    <section class="p4-intro" aria-label="Propuesta de valor">
+      <p class="p4-section-label" data-p4-reveal>Una idea simple</p>
+      <div class="p4-intro-statement" data-p4-reveal>
+        <h2>La tecnología no debería sumar trabajo.</h2>
+        <p>Debería quitarlo del camino.</p>
+      </div>
+      <p class="p4-intro-note" data-p4-reveal>Convertimos procesos cotidianos en herramientas precisas, fáciles de usar y preparadas para crecer con tu empresa.</p>
+    </section>
+
+    <section class="p4-system" id="sistema" aria-labelledby="p4-system-title">
+      <div class="p4-system-head" data-p4-reveal>
+        <p class="p4-section-label is-light">Lo que cambia</p>
+        <h2 id="p4-system-title">De puntos sueltos<br />a una operación continua.</h2>
+        <p>No imponemos software. Entendemos cómo trabaja tu empresa y construimos el recorrido que necesita.</p>
+      </div>
+
+      <div class="p4-flow" aria-label="Ejemplos de transformación digital">
+        <div class="p4-flow-head" aria-hidden="true">
+          <span>Hoy</span><span>Intervención</span><span>Resultado</span>
+        </div>
+        {transformations.map((item, index) => (
+          <article class="p4-flow-row" data-p4-reveal style={`--p4-delay:${index * 70}ms`}>
+            <div class="p4-flow-source"><span>{item.code}</span><p>{item.source}</p></div>
+            <div class="p4-flow-line" aria-hidden="true"><i></i><b></b></div>
+            <div class="p4-flow-system"><small>SISTEMA</small><p>{item.system}</p></div>
+            <div class="p4-flow-line" aria-hidden="true"><i></i><b></b></div>
+            <div class="p4-flow-result"><span aria-hidden="true">✓</span><p>{item.result}</p></div>
+          </article>
+        ))}
+      </div>
+
+      <div class="p4-capabilities" data-p4-reveal>
+        <p>Capacidad integrada</p>
+        <ul>
+          <li><span>01</span> Aplicaciones web</li>
+          <li><span>02</span> Automatización</li>
+          <li><span>03</span> Experiencias digitales</li>
+        </ul>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Encontrar una solución <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="p4-projects" id="proyectos" aria-labelledby="p4-projects-title">
+      <div class="p4-projects-head" data-p4-reveal>
+        <p class="p4-section-label">Prueba de capacidad</p>
+        <h2 id="p4-projects-title">Sistemas reales.<br /><em>Resultados utilizables.</em></h2>
+        <p>Diseñamos cada solución desde la lógica del negocio, no desde una plantilla.</p>
+      </div>
+
+      <div class="p4-project-list">
+        {projects.map((project, index) => (
+          <article class="p4-project" data-p4-project data-p4-reveal style={`--p4-delay:${index * 45}ms`}>
+            <span class="p4-project-number">{String(index + 1).padStart(2, "0")}</span>
+            <div class="p4-project-info">
+              <p>{project.type}</p>
+              <h3>{project.name}</h3>
+              <span>{project.description}</span>
+            </div>
+            <div class="p4-project-glyph" aria-hidden="true">
+              <i></i><b>{project.glyph}</b>
+            </div>
+            <span class="p4-project-status"><i></i> Implementado</span>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="p4-method" id="metodo" aria-labelledby="p4-method-title">
+      <div class="p4-method-copy" data-p4-reveal>
+        <p class="p4-section-label">Cómo trabajamos</p>
+        <h2 id="p4-method-title">Primero entendemos.<br />Después conectamos.</h2>
+        <p>Un proceso directo para pasar de una fricción cotidiana a una herramienta que tu equipo sí quiere usar.</p>
+      </div>
+
+      <ol class="p4-method-track">
+        <li data-p4-reveal>
+          <span>01 · ENTENDER</span>
+          <h3>Mapeamos el trabajo real.</h3>
+          <p>Personas, decisiones, excepciones y tareas que hoy consumen tiempo.</p>
+        </li>
+        <li data-p4-reveal>
+          <span>02 · DISEÑAR</span>
+          <h3>Hacemos visible la solución.</h3>
+          <p>Definimos el recorrido antes de construir para avanzar con claridad.</p>
+        </li>
+        <li data-p4-reveal>
+          <span>03 · ACTIVAR</span>
+          <h3>Entregamos un sistema en marcha.</h3>
+          <p>Probamos, ajustamos y acompañamos la adopción en la operación diaria.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="p4-contact" id="contacto" aria-labelledby="p4-contact-title">
+      <div class="p4-contact-map" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <b>Si</b>
+      </div>
+      <div class="p4-contact-copy" data-p4-reveal>
+        <p class="p4-section-label is-light">Siguiente coordenada</p>
+        <h2 id="p4-contact-title">¿Qué proceso<br />quieres dejar de<br /><em>perseguir?</em></h2>
+        <p>Cuéntanos cómo funciona hoy. Te ayudamos a imaginar una forma más clara de operarlo.</p>
+        <a class="p4-button p4-button-contact" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          Conversar por WhatsApp
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p4-footer">
+    <a class="p4-brand" href="#inicio" aria-label="SomosInformáticos, volver al inicio">
+      <svg aria-hidden="true" viewBox="0 0 42 42"><path d="M8 8h10v10H8zM24 8h10v10H24zM8 24h10v10H8z" /><path class="p4-brand-live" d="M24 29h10" /></svg>
+      <span>Somos<br />Informáticos</span>
+    </a>
+    <p>Aplicaciones · Automatización · Presencia digital</p>
+    <p>Ciudad de México · <span data-p4-year>2026</span></p>
+  </footer>
+
+  <a class="p4-floating" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Solicitar una cotización por WhatsApp">
+    <span><i></i> Hablemos</span>
+    <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5" /></svg>
+  </a>
+
+  <script src="../scripts/propuesta4.js"></script>
+</ProposalLayout>
